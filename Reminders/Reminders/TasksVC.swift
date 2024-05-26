@@ -16,6 +16,14 @@ class TasksVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         super.viewDidLoad()
 
         self.title = "Tasks"
+        // Adding Plus button on the navigation bar.
+        let addTaskBtn = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(addTaskBtnAction))
+        self.navigationItem.rightBarButtonItem  = addTaskBtn
+    }
+    
+    @objc
+    func addTaskBtnAction() {
+        print("Plus button clicked!")
     }
 
     // MARK: - TableView method's
