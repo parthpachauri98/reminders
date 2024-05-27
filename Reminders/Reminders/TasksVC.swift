@@ -7,10 +7,10 @@
 
 import UIKit
 
-class TasksVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TasksVC: UIViewController, UITableViewDataSource, UITableViewDelegate, NewTaskVCDelegate {
     @IBOutlet weak var tableView: UITableView!
     
-    let tasks: [String] = ["Task1", "Task2", "Task3", "Task4"]
+    var tasks: [TodoTask] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +23,21 @@ class TasksVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @objc
     func addTaskBtnAction() {
-        print("Plus button clicked!")
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let newTaskVC = storyboard.instantiateViewController(withIdentifier: "NewTaskVC") as? NewTaskVC else {
+            return
+        }
+        newTaskVC.delegate = self
+        navigationController?.pushViewController(newTaskVC, animated: true)
     }
+    
+    // MARK: - NewTaskVCDelegate method's
+    
+    func didSaveNewTask(_ task: TodoTask) {
+        tasks.append(task)
+        tableView.reloadData()
+    }
+    
 
     // MARK: - TableView method's
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,14 +45,23 @@ class TasksVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "taskId", for: indexPath) 
+        let task = tasks[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "taskId", for: indexPath)
         var config = cell.defaultContentConfiguration()
-        config.text = tasks[indexPath.row]
+        config.text = task.title
+        config.secondaryText = task.desc
         cell.contentConfiguration = config
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tasks.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

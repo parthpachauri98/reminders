@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2551A962C04F84800BE841C /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2551A952C04F84800BE841C /* TodoTask.swift */; };
+		B2551A982C04FAF300BE841C /* NewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2551A972C04FAF300BE841C /* NewTaskVC.swift */; };
 		B2C1FDFA2C00CE9D002B8EF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1FDF92C00CE9D002B8EF7 /* AppDelegate.swift */; };
 		B2C1FDFC2C00CE9D002B8EF7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C1FDFB2C00CE9D002B8EF7 /* SceneDelegate.swift */; };
 		B2C1FE012C00CE9D002B8EF7 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B2C1FE002C00CE9D002B8EF7 /* Base */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2551A952C04F84800BE841C /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
+		B2551A972C04FAF300BE841C /* NewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskVC.swift; sourceTree = "<group>"; };
 		B2C1FDF62C00CE9D002B8EF7 /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2C1FDF92C00CE9D002B8EF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2C1FDFB2C00CE9D002B8EF7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2551A922C04F7B200BE841C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2551A952C04F84800BE841C /* TodoTask.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B2C1FDED2C00CE9D002B8EF7 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +113,7 @@
 		B2C1FDF82C00CE9D002B8EF7 /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				B2551A922C04F7B200BE841C /* Model */,
 				B2C1FDF92C00CE9D002B8EF7 /* AppDelegate.swift */,
 				B2C1FDFB2C00CE9D002B8EF7 /* SceneDelegate.swift */,
 				B2C1FDFF2C00CE9D002B8EF7 /* Main.storyboard */,
@@ -109,6 +122,7 @@
 				B2C1FE072C00CE9F002B8EF7 /* Info.plist */,
 				B2C1FE2D2C00D5BF002B8EF7 /* LoginVC.swift */,
 				B2C1FE2F2C00D649002B8EF7 /* TasksVC.swift */,
+				B2551A972C04FAF300BE841C /* NewTaskVC.swift */,
 			);
 			path = Reminders;
 			sourceTree = "<group>";
@@ -262,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2C1FDFA2C00CE9D002B8EF7 /* AppDelegate.swift in Sources */,
+				B2551A962C04F84800BE841C /* TodoTask.swift in Sources */,
 				B2C1FDFC2C00CE9D002B8EF7 /* SceneDelegate.swift in Sources */,
 				B2C1FE2E2C00D5BF002B8EF7 /* LoginVC.swift in Sources */,
+				B2551A982C04FAF300BE841C /* NewTaskVC.swift in Sources */,
 				B2C1FE302C00D649002B8EF7 /* TasksVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

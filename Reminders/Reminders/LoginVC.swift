@@ -17,7 +17,7 @@ class LoginVC: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    let profiles: [Profile] = [.init(username: "Parth", password: "123456")]
+    let profiles: [Profile] = [.init(username: "abcd", password: "123456")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
